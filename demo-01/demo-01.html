@@ -5,5 +5,18 @@
 		<title>Vue-demo-01</title>
 	</head>
 	<body>
+	    <div id="app">
+	        <p>{{msg}}</p>
+	    </div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	        var data = {
+	            msg: 'Hello World'
+	        }
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: data
+	    	})
+	    </script>
 	</body>
 </html>

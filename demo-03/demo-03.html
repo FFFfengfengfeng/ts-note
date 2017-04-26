@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue-demo-02</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <p>{{msg}}</p>
+	    </div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	        data = {
+	            msg: 'Hello World',
+	            obj: {
+	                color: 'red'
+	            }
+	        }
+	        var app = new Vue({
+	            el: '#app',
+	            data: data
+	        })
+//	        console.log(app)
+	        console.log(app.msg === data.msg)
+	        document.getElementById('app').innerHTML = 'Demo-02'
+	        console.log(app.msg)
+	        console.log(data.msg)
+	    </script>
+	</body>
+</html>
