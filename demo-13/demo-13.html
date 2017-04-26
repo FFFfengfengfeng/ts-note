@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-13</title>
+	</head>
+	<body>
+	    <h3>条件渲染</h3>
+	    <div id="app">
+	        <p v-if="seen">{{can}}</p>
+	        <p v-else>{{notcan}}</p>
+	        <template v-if="motto">
+	            <p>我叫XXX</p>
+	            <p>我今年18岁</p>
+	        </template>
+	        <template>
+	            <p v-show="isShow">出来吧皮卡丘</p>
+	        </template>
+	        <a href="javascript:;" @click="change">点我看看</a>
+	        <a href="javascript:;" @click="changeM">点我隐藏个人信息</a>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        can: 'seen为真,你能看到我了',
+	    	        notcan: 'seen不为真,你看到我了',
+	    	        seen: true,
+	    	        motto: true,
+	    	        isShow: true
+	    	    },
+	    	    methods: {
+	    	        change: function() {
+	    	            this.isShow = !this.isShow;
+	    	        },
+	    	        changeM: function() {
+	    	            this.motto = !this.motto;
+	    	        }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>
