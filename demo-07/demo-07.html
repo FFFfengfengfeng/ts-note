@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-07</title>
+	</head>
+	<body>
+	    <h3>使用条件指令控制DOM元素的显示</h3>
+	    <div id="app">
+	        <p v-if="seen">{{msg1}}</p>
+	        <p v-else>{{msg2}}</p>
+	    </div>
+	    <div id="app2">
+	    	<p>{{seen ? msg1 : msg2}}</p>
+	    </div>
+	    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        msg1: 'Hello World!',
+	    	        msg2: '你看不到我',
+	    	        seen: false
+	    	    }
+	    	});
+	    	var app2 = new Vue({
+	    	    el: '#app2',
+	    	    data: {
+	    	        msg1: 'Hello World!',
+	    	        msg2: '你看不到我',
+	    	        seen: true
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

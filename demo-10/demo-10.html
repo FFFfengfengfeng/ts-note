@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-10</title>
+		<style type="text/css">
+			span{
+			    cursor: pointer;
+			    display: inline-block;
+			    border: 1px solid #CCC;
+			    border-radius: 3px;
+			    width: 20px;
+			    height: 20px;
+			    text-align: center;
+			    line-height: 20px;
+			    margin-top: 10px;
+			    margin-right: 10px;
+			}
+			.num1,.num2{
+			    width: 50px;
+			    border: 0;
+			}
+		</style>
+	</head>
+	<body>
+	    <h3>计算属性</h3>
+	    <div id="app">
+	        <span v-for="i in numArr" @click="choiceNum(i)">{{i.inner}}</span>
+	        <div>
+	            <span class="num1">{{num1}}</span>
+                <span @click="add">+</span>
+                <span class="num2">{{num2}}</span>
+                <span>=</span>&nbsp; <span v-if="result">{{result}}</span>
+	        </div>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        num1: '',
+	    	        num2: '',
+	    	        numArr: [
+	    	           {inner: '0'},
+	    	           {inner: '1'},
+	    	           {inner: '2'},
+	    	           {inner: '3'},
+	    	           {inner: '4'},
+	    	           {inner: '5'},
+	    	           {inner: '6'},
+	    	           {inner: '7'},
+	    	           {inner: '8'},
+	    	           {inner: '9'}
+	    	        ],
+	    	        isNum1: true
+	    	    },
+	    	    computed: {
+	    	        result: function() {
+	    	           return parseInt(this.num1) + parseInt(this.num2)
+	    	        }
+	    	    },
+	    	    methods: {
+	    	        choiceNum: function(i) {
+	    	            return this.isNum1 ? this.num1 += i.inner : this.num2 += i.inner;
+	    	        },
+	    	        add: function() {
+	    	            return this.isNum1 = false;
+	    	        }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

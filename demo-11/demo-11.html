@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-11</title>
+		<style type="text/css">
+			.active{
+			    color: green;
+			}
+			.warn{
+			    color: red;
+			}
+			.class1{
+			    color: blue;
+			}
+			.class2{
+			    font-size: 20px;
+			}
+			.class3{
+			    text-decoration: underline;
+			}
+			.class4{
+			    color: blueviolet;
+			}
+			.class5{
+			    font-size: 30px;
+			}
+			.class6{
+			    text-decoration: line-through;
+			}
+		</style>
+	</head>
+	<body>
+	    <h3>绑定Class</h3>
+	    <div id="app">
+	        <p :class="{active: isActive, warn: isWarn}">{{msg}}</p>
+	        <p :class="classObj">{{msg}}</p>
+	        <p :class="[class4, class5, class6]">{{msg}}</p>
+	        <a href="javascript:;" @click="change">点击一下</a>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	    	   el: '#app',
+	    	   data: {
+	    	      msg: 'Hello World',
+	    	      isActive: true,
+	    	      isWarn: false,
+	    	      classObj: {
+	    	          class1: true,
+	    	          class2: true,
+	    	          class3: true
+	    	      },
+	    	      class4: 'class4',
+	    	      class5: 'class5',
+	    	      class6: 'class6'
+	    	   },
+	    	   methods: {
+	    	       change: function() {
+	    	           console.log(this.isActive)
+	    	           this.isActive = !this.isActive;
+	    	           this.isWarn = !this.isWarn;
+	    	       }
+	    	   }
+	    	});
+	    </script>
+	</body>
+</html>
