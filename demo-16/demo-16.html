@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-16</title>
+	</head>
+	<body>
+	    <h3>文本控件</h3>
+	    <div id="app">
+	        <p>{{message}}</p>
+	        <input type="text" v-model="message"/>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        message: 'Hello World'
+	    	    }
+	    	});
+	    </script>
+	    <h3>单选控件</h3>
+	    <div id="app1">
+	        <label for="man">男的</label>
+	        <input type="radio" id="man" value="man" name="man" v-model="picked"/>
+	        <label for="woman">女的</label>
+	        <input type="radio" id="woman" value="woman" name="woman" v-model="picked"/>
+	    </div>
+	    <script type="text/javascript">
+	    	var app1 = new Vue({
+	    	    el: '#app1',
+	    	    data: {
+	    	        picked: 'woman'
+	    	    }
+	    	});
+	    </script>
+	    <h3>复选框</h3>
+	    <div id="app2">
+	        <label for="benz">奔驰</label>
+	        <input type="checkbox" id="benz" value="benz" v-model="checked"/>
+	        <label for="bmw">宝马</label>
+	        <input type="checkbox" id="bmw" value="bmw" v-model="checked"/>
+	        <label for="audi">奥迪</label>
+	        <input type="checkbox" id="audi" value="audi" v-model="checked"/>
+	        <p>选择了: {{checked}}</p>
+	    </div>
+	    <script type="text/javascript">
+	    	var app2 = new Vue({
+	    	    el: '#app2',
+	    	    data: {
+	    	        checked: []
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

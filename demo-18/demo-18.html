@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-18</title>
+	</head>
+	<body>
+	    <h3>局部注册组件</h3>
+	    <div id="app">
+	        <demo></demo>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	        Vue.component('demo', {
+	            template: '<p @click="toUpper">{{msg}}</p>',
+	            data: function() {
+	                return {
+	                    msg: 'hello world'
+	                }
+	            },
+	            methods: {
+	                toUpper: function() {
+	                   this.msg = this.msg.toUpperCase();
+	                }
+	            }
+	        })
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        
+	    	    },
+	    	})
+	    </script>
+	</body>
+</html>

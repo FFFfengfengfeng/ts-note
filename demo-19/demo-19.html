@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-demo-19</title>
+	</head>
+	<body>
+	    <h3>使用Props实现父组件向子组件传递数据</h3>
+	    <div id="app">
+	        <demo some-text="hello world"></demo>
+	    </div>
+	    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	        Vue.component('demo', {
+	            template: '<div></div>',
+	            props: ['someText']
+	        });
+	    	var app = new Vue({
+	    	    el: '#app',
+	    	    components: {
+	    	        'demo': {
+                        template: '<p></p>'
+                    }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>
