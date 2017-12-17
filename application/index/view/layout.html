@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>保险理赔系统</title>
+    <link rel="stylesheet" href="__ROOT__/static/css/layui.css">
+    <link rel="stylesheet" href="__ROOT__/static/css/main.css">
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">担保业务管理系统</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <!--<ul class="layui-nav layui-layout-left">-->
+                <!--<li class="layui-nav-item"><a href="">控制台</a></li>-->
+                <!--<li class="layui-nav-item"><a href="">商品管理</a></li>-->
+                <!--<li class="layui-nav-item"><a href="">用户</a></li>-->
+                <!--<li class="layui-nav-item">-->
+                    <!--<a href="javascript:;">其它系统</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                        <!--<dd><a href="">邮件管理</a></dd>-->
+                        <!--<dd><a href="">消息管理</a></dd>-->
+                        <!--<dd><a href="">授权管理</a></dd>-->
+                    <!--</dl>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <ul class="layui-nav layui-layout-right">
+                <!--<li class="layui-nav-item">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
+                        <!--贤心-->
+                    <!--</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                        <!--<dd><a href="">基本资料</a></dd>-->
+                        <!--<dd><a href="">安全设置</a></dd>-->
+                    <!--</dl>-->
+                <!--</li>-->
+                <li class="layui-nav-item"><a href="{:url('login/out')}">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <li class="layui-nav-item {eq name='$Request.controller' value='Company'}layui-nav-itemed{/eq}">
+                        <a class="" href="javascript:;">企业管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="{eq name='$Request.path' value='index/company/index'}layui-this{/eq}"><a href="{:url('company/index')}">企业资料管理</a></dd>
+                            <dd class="{eq name='$Request.path' value='index/company/credit'}layui-this{/eq}"><a href="{:url('company/credit')}">企业资信管理</a></dd>
+                        </dl>
+                    </li>
+                        <li class="layui-nav-item {eq name='$Request.controller' value='Service'}layui-nav-itemed{/eq}">
+                        <a href="javascript:;">业务管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="{eq name='$Request.path' value='index/service/index'}layui-this{/eq}"><a href="{:url('service/index')}">新增担保项目</a></dd>
+                            <dd class="{eq name='$Request.path' value='index/service/lists'}layui-this{/eq}"><a href="{:url('service/lists')}">担保项目审批</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item {eq name='$Request.controller' value='Being'}layui-nav-itemed{/eq}">
+                        <a href="javascript:;">保后管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="{eq name='$Request.path' value='index/being/index'}layui-this{/eq}"><a href="{:url('being/index')}">在保项目</a></dd>
+                            <!--<dd><a href="javascript:;">还款记录</a></dd>-->
+                            <dd class="{eq name='$Request.path' value='index/being/complete'}layui-this{/eq}"><a href="{:url('being/complete')}">撤保项目</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 15px;">{__CONTENT__}</div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+        </div>
+    </div>
+    <script src="__ROOT__/static/js/jquery-3.2.1.min.js"></script>
+    <script src="__ROOT__/static/layui.all.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function(){
+            var element = layui.element;
+
+        });
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#test1', //指定元素
+                type: 'datetime'
+            });
+        });
+    </script>
+</body>
+</html>

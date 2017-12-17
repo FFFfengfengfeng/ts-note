@@ -1,0 +1,42 @@
+<a href="{:url('company/add')}" class="layui-btn layui-btn-primary">新增企业</a>
+<table class="layui-table">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>企业名</th>
+            <th>企业规模</th>
+            <th>注册资金</th>
+            <th>企业类型</th>
+            <th>录入时间</th>
+            <th>担保业务</th>
+            <th style="max-width: 200px;">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach name="company" item="i"}
+        <tr>
+            <td>{$i.id}</td>
+            <td>{$i.name}</td>
+            <td>{$i.size_num}</td>
+            <td>{$i.amount}</td>
+            <td>
+                {foreach name="type" item="o"}
+                    {eq name="$o.id" value="$i.type"}{$o.name}{/eq}
+                {/foreach}
+            </td>
+            <td>{$i.time}</td>
+            <td>{$i.service}</td>
+            <td class="text-center">
+                <a href="{:url('company/edit', ['company_id' => $i.id])}" class="layui-btn layui-btn-primary">修改</a>
+                <a href="{:url('company/delete', ['company_id' => $i.id])}" class="layui-btn layui-btn-primary">删除</a>
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+{$page}
