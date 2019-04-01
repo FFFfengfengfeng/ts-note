@@ -38,3 +38,28 @@ let str:string = 'hello world!';
 let arr1:number[] = [1, 2, 3];
 // 第二种
 let arr2:Array<number> = [1, 2, 3];
+
+// 元组类型
+let tum:[number, string] = [123, 'hello world'];
+
+// 枚举类型
+enum Code {
+    success = 1,
+    error = 2
+};
+
+let success:Code = Code.success;
+console.log(`正确: ${success}`);
+
+let error:Code = Code.error;
+console.log(`错误: ${error}`);
+
+// 任意类型
+let an:any = 123;
+an = 'str';
+
+// void类型
+// 表示没有返回值
+
+// never类型
+// 表示不存在的类型,如Error

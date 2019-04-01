@@ -33,3 +33,23 @@ var str = 'hello world!';
 var arr1 = [1, 2, 3];
 // 第二种
 var arr2 = [1, 2, 3];
+// 元组类型
+var tum = [123, 'hello world'];
+// 枚举类型
+var Code;
+(function (Code) {
+    Code[Code["success"] = 1] = "success";
+    Code[Code["error"] = 2] = "error";
+})(Code || (Code = {}));
+;
+var success = Code.success;
+console.log("\u6B63\u786E: " + success);
+var error = Code.error;
+console.log("\u9519\u8BEF: " + error);
+// 任意类型
+var an = 123;
+an = 'str';
+// void类型
+// 表示没有返回值
+// never类型
+// 表示不存在的类型,如Error
