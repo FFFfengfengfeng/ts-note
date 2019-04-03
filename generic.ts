@@ -1,0 +1,1 @@
+// Typescript泛型
